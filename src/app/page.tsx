@@ -7,8 +7,8 @@ import { ExternalLink, Heading, Item, TechItem } from "@/components/components"
 export default async function Home() {
     return (
         <>
-            <main className="container mx-auto px-12 lg:px-24 grid lg:grid-cols-2 grid-cols-1 gap-4 min-h-screen">
-                <header className="flex flex-col pt-16 lg:py-24 justify-between gap-8 relative lg:sticky top-0 max-h-screen">
+            <main className="container mx-auto px-10 lg:px-24 grid lg:grid-cols-2 grid-cols-1 gap-4 min-h-screen">
+                <header className="flex flex-col pt-12 lg:py-24 justify-between gap-8 relative lg:sticky top-0 max-h-screen">
                     <div className="flex flex-col gap-3">
                         <h1 className="text-4xl font-bold">Mohamed Alnahhas</h1>
                         <h2 className="text-xl">Web Developer</h2>
