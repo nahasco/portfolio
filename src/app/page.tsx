@@ -107,7 +107,7 @@ export default async function Home() {
                     <div>
                         <Heading>Formal Education</Heading>
                         <ul className="flex flex-col gap-8 mt-6 pb-20">
-                            <li className="grid grid-cols-8 text-muted-foreground">
+                            <li className="grid grid-cols-8 gap-4 text-muted-foreground">
                                 <div className="col-span-2 text-muted-foreground">2021-2025</div>
                                 <div className="col-span-6">
                                     <h4 className="text-lg text-foreground">Yildiz Technical University</h4>
@@ -116,7 +116,7 @@ export default async function Home() {
                                 </div>
                             </li>
 
-                            <li className="grid grid-cols-8 text-muted-foreground">
+                            <li className="grid grid-cols-8 gap-4 text-muted-foreground">
                                 <div className="col-span-2 text-muted-foreground">2023</div>
                                 <div className="col-span-6">
                                     <h4 className="text-lg text-foreground">Technical University Dortmund</h4>
