@@ -75,8 +75,14 @@ export function Item({ item }: { item: ItemType }) {
                         })}
                     </div>
                 </div>
-                <div className="bg-white/50 lg:max-h-[125px] max-w-[300px] aspect-video rounded-md relative">
-                    <Image src={`/images/${item.slug}.png`} alt={item.slug} draggable="false" fill className="object-cover object-left-top rounded-sm" />
+                <div className="bg-muted lg:max-h-[125px] max-w-[300px] aspect-video rounded-md relative">
+                    <Image
+                        src={`/images/${item.slug}.png`}
+                        alt={item.slug}
+                        draggable="false"
+                        fill
+                        className="object-cover object-left-top rounded-sm"
+                    />
                 </div>
             </div>
         </article>
