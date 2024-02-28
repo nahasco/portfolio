@@ -129,13 +129,13 @@ export default async function Home() {
                     </div>
 
                     <div>
-                        <Heading>CourseWork</Heading>
+                        <Heading>Course Work</Heading>
                         <ul className="flex flex-col gap-8 mt-6 pb-20">
                             <li className="grid grid-cols-8 text-muted-foreground">
                                 <div className="col-span-2 text-muted-foreground">2022</div>
                                 <div className="col-span-6">
                                     <h4 className="text-lg text-foreground">
-                                        CS50 Web Development with Python & Javascript
+                                        CS50's Web Development with Python & Javascript
                                     </h4>
                                     <ExternalLink href="https://pll.harvard.edu/course/cs50s-web-programming-python-and-javascript">
                                         View
