@@ -1,46 +1,33 @@
 import { Button } from "@/components/ui/button"
-import { ArrowDownToLineIcon } from "lucide-react"
+import { ArrowDownToLineIcon, ArrowUpRightIcon, ExternalLinkIcon } from "lucide-react"
 import Image from "next/image"
-import { promises as fs } from "fs"
-import Link from "next/link"
+import { ItemType, projects, works } from "@/data"
+import { ExternalLink, Heading, Item, TechItem } from "@/components/components"
 
 export default async function Home() {
-    const file = await fs.readFile(process.cwd() + "/src/data/projects.json", "utf8")
-    const projects = JSON.parse(file).projects
-
-    function TechIcon({ children }) {
-        return (
-            <li className="inline-flex px-6 py-4 rounded-md items-center gap-4 bg-primary-foreground text-base">
-                {children}
-            </li>
-        )
-    }
-
-    function Heading({ children }) {
-        return <h2 className="text-2xl my-6">{children}</h2>
-    }
-
-    function ProjectItem({ project }) {
-        return (
-            <Link href={`/projects/${project.slug}`}>
-                <article className="flex flex-col gap-3">
-                    <div className="bg-white/50 h-[225px] rounded-md relative overflow-hidden">
-                        <Image src={`/images/${project.slug}.png`} alt={project.slug} fill className="object-cover" />
-                    </div>
-                    <h1 className="text-lg">{project.title}</h1>
-                </article>
-            </Link>
-        )
-    }
-
     return (
         <>
-            <main className="container mx-auto px-16 flex">
-                <header className="flex justify-between items-center py-8">
-                    <h1 className="text-2xl">Mohamed Alnahhas</h1>
-                    <div className="flex gap-6 items-center">
+            <main className="container mx-auto px-12 lg:px-24 grid lg:grid-cols-2 grid-cols-1 gap-4 min-h-screen">
+                <header className="flex flex-col pt-16 lg:py-24 justify-between gap-8 relative lg:sticky top-0 max-h-screen">
+                    <div className="flex flex-col gap-3">
+                        <h1 className="text-4xl font-bold">Mohamed Alnahhas</h1>
+                        <h2 className="text-xl">Web Developer</h2>
+                        <p className="lg:max-w-[80%] text-muted-foreground mt-5">
+                            As a Business Administration student with a keen interest in technology and software, I have
+                            been drawn to the field of web development. I am equally passionate about both areas and
+                            have pursued my interest in web development by completing two Harvard courses and working on
+                            various personal projects.
+                        </p>
+                    </div>
+                    <div className="flex flex-col gap-6">
+                        <a href="/cv.pdf" download="CV-Mohamed-Alnahhas">
+                            <Button className="rounded-full self-start">
+                                <ArrowDownToLineIcon className="me-2 w-4 h-4" />
+                                Resume(CV)
+                            </Button>
+                        </a>
                         <div className="flex gap-3">
-                            <a>
+                            <a href="https://github.com/nahasco" target="_blank">
                                 <Image src="/icons/github-icon.svg" alt="Github Logo" width={20} height={20} priority />
                             </a>
                             <a href="https://www.linkedin.com/in/mohamed-alnahhas/" target="_blank">
@@ -53,126 +40,113 @@ export default async function Home() {
                                 />
                             </a>
                         </div>
-                        <Button className="rounded-full">
-                            <ArrowDownToLineIcon className="me-2 w-4 h-4" />
-                            Resume(CV)
-                        </Button>
                     </div>
                 </header>
 
-                <div>
-                    <div className="flex flex-col w-full py-14 gap-6">
-                        <div className="text-6xl">
-                            Hi, I’m Mohamed
-                            <br></br>A Web Developer & Designer
-                        </div>
-                        <p className="lg:max-w-[60%]">
-                            As a Business Administration student with a keen interest in technology and software, I have
-                            been drawn to the field of web development. I am equally passionate about both areas and
-                            have pursued my interest in web development by completing two Harvard courses and working on
-                            various personal projects.
-                        </p>
-                    </div>
-
+                <div className="py-16 lg:py-24">
                     <div>
-                        <Heading>My Skills</Heading>
-                        <ul className="flex flex-wrap gap-4">
-                            <TechIcon>
-                                <Image src="/icons/js-logo.svg" alt="JS Logo" width={30} height={30} priority />
-                                Javascript
-                            </TechIcon>
-                            <TechIcon>
-                                <Image src="/icons/python-logo.svg" alt="Python Logo" width={30} height={30} priority />
-                                Python
-                            </TechIcon>
-                            <TechIcon>
-                                <Image
-                                    src="/icons/nextjs-logo.svg"
-                                    alt="Next.js Logo"
-                                    width={30}
-                                    height={30}
-                                    priority
-                                />
-                                Next.js
-                            </TechIcon>
-                            <TechIcon>
-                                <Image src="/icons/react-logo.svg" alt="React Logo" width={30} height={30} priority />
-                                React
-                            </TechIcon>
-                            <TechIcon>
-                                <Image src="/icons/django-logo.svg" alt="Django Logo" width={20} height={20} priority />
-                                Django
-                            </TechIcon>
-                            <TechIcon>
-                                <Image
-                                    src="/icons/postgresql-logo.svg"
-                                    alt="PostgresSQL Logo"
-                                    width={30}
-                                    height={30}
-                                    priority
-                                />
-                                PostgreSQL
-                            </TechIcon>
-                            <TechIcon>
-                                <Image src="/icons/aws-logo.svg" alt="AWS Logo" width={30} height={30} priority />
-                                Amazon Web Services
-                            </TechIcon>
-                            <TechIcon>
-                                <Image src="/icons/sql-logo.svg" alt="SQL Logo" width={30} height={30} priority />
-                                SQL
-                            </TechIcon>
-                            <TechIcon>
-                                <Image src="/icons/html-logo.svg" alt="HTML Logo" width={26} height={30} priority />
-                                HTML
-                            </TechIcon>
-                            <TechIcon>
-                                <Image src="/icons/css-logo.svg" alt="CSS Logo" width={28} height={30} priority />
-                                CSS
-                            </TechIcon>
-                            <TechIcon>
-                                <Image src="/icons/github-icon.svg" alt="Github Logo" width={30} height={30} priority />
-                                GitHub
-                            </TechIcon>
-                            <TechIcon>
-                                <Image src="/icons/figma-logo.svg" alt="Figma Logo" width={20} height={30} priority />
-                                Figma
-                            </TechIcon>
-                            <TechIcon>
-                                <Image
-                                    src="/icons/wordpress-logo.svg"
-                                    alt="WordPress Logo"
-                                    width={30}
-                                    height={30}
-                                    priority
-                                />
-                                WordPress
-                            </TechIcon>
-                            <TechIcon>
-                                <Image
-                                    src="/icons/woocommerce-logo.svg"
-                                    alt="Woocommerce Logo"
-                                    width={30}
-                                    height={30}
-                                    priority
-                                />
-                                Woocommerce
-                            </TechIcon>
+                        <Heading className="mt-0">Tech Skills</Heading>
+                        <ul className="flex flex-wrap gap-2 mt-6 pb-20">
+                            <TechItem label={"Javascript"} imageSrc="/icons/js-logo.svg" imageAlt="JS Logo" />
+                            <TechItem label={"Python"} imageSrc="/icons/python-logo.svg" imageAlt="Python Logo" />
+                            <TechItem label={"Next.js"} imageSrc="/icons/nextjs-logo.svg" imageAlt="Next.js Logo" />
+                            <TechItem label={"React"} imageSrc="/icons/react-logo.svg" imageAlt="React Logo" />
+                            <TechItem label={"Django"} imageSrc="/icons/django-logo.svg" imageAlt="Django Logo" />
+                            <TechItem
+                                label={"Tailwind CSS"}
+                                imageSrc="/icons/tailwindcss.svg"
+                                imageAlt="Tailwind Logo"
+                            />
+                            <TechItem label={"HTML"} imageSrc="/icons/html-logo.svg" imageAlt="HTML Logo" />
+                            <TechItem label={"CSS"} imageSrc="/icons/css-logo.svg" imageAlt="CSS Logo" />
+                            <TechItem
+                                label={"PostgreSQL"}
+                                imageSrc="/icons/postgresql-logo.svg"
+                                imageAlt="PostgresSQL Logo"
+                            />
+                            <TechItem
+                                label={"Amazon Web Services"}
+                                imageSrc="/icons/aws-logo.svg"
+                                imageAlt="AWS Logo"
+                            />
+                            <TechItem label={"SQL"} imageSrc="/icons/sql-logo.svg" imageAlt="SQL Logo" />
+                            <TechItem label={"GitHub"} imageSrc="/icons/github-icon.svg" imageAlt="Github Logo" />
+                            <TechItem label={"Figma"} imageSrc="/icons/figma-logo.svg" imageAlt="Figma Logo" />
+                            <TechItem
+                                label={"WordPress"}
+                                imageSrc="/icons/wordpress-logo.svg"
+                                imageAlt="WordPress Logo"
+                            />
+                            <TechItem
+                                label={"Woocommerce"}
+                                imageSrc="/icons/woocommerce-logo.svg"
+                                imageAlt="Woocommerce Logo"
+                            />
+                            <TechItem label={"Elementor"} imageSrc="/icons/elementor.svg" imageAlt="Elementor Logo" />
                         </ul>
                     </div>
 
-                    <div className="mt-[4rem]">
+                    <div>
                         <Heading>Projects</Heading>
-                        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+                        <div className="flex flex-col gap-12 mt-6 pb-20">
                             {projects.map((project) => {
-                                return <ProjectItem project={project} />
+                                return <Item key={project.slug} item={project} />
                             })}
                         </div>
                     </div>
+
+                    <div>
+                        <Heading>Client Work</Heading>
+                        <div className="flex flex-col gap-12 mt-6 pb-20">
+                            {works.map((work) => {
+                                return <Item key={work.slug} item={work} />
+                            })}
+                        </div>
+                    </div>
+
+                    <div>
+                        <Heading>Formal Education</Heading>
+                        <ul className="flex flex-col gap-8 mt-6 pb-20">
+                            <li className="grid grid-cols-8 text-muted-foreground">
+                                <div className="col-span-2 text-muted-foreground">2021-2025</div>
+                                <div className="col-span-6">
+                                    <h4 className="text-lg text-foreground">Yildiz Technical University</h4>
+                                    <p>Bachelor of Arts - Business Administration</p>
+                                    <p>Istanbul, Turkey</p>
+                                </div>
+                            </li>
+
+                            <li className="grid grid-cols-8 text-muted-foreground">
+                                <div className="col-span-2 text-muted-foreground">2023</div>
+                                <div className="col-span-6">
+                                    <h4 className="text-lg text-foreground">Technical University Dortmund</h4>
+                                    <p>Erasmus+ - Business Administration</p>
+                                    <p>Dortmund, Germany</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <Heading>CourseWork</Heading>
+                        <ul className="flex flex-col gap-8 mt-6 pb-20">
+                            <li className="grid grid-cols-8 text-muted-foreground">
+                                <div className="col-span-2 text-muted-foreground">2022</div>
+                                <div className="col-span-6">
+                                    <h4 className="text-lg text-foreground">
+                                        CS50 Web Development with Python & Javascript
+                                    </h4>
+                                    <ExternalLink href="https://pll.harvard.edu/course/cs50s-web-programming-python-and-javascript">
+                                        View
+                                    </ExternalLink>
+                                    <p>Harvard University</p>
+                                    <p>Online</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </main>
-            <footer className="py-20 flex justify-center border-t mt-20">
-                <div>Mohamed Alnahhas</div>
-            </footer>
         </>
     )
 }
