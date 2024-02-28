@@ -10,7 +10,7 @@ export default async function Home() {
             <main className="container mx-auto px-10 lg:px-24 grid lg:grid-cols-2 grid-cols-1 gap-4 min-h-screen">
                 <header className="flex flex-col pt-12 lg:py-24 justify-between gap-8 relative lg:sticky top-0 max-h-screen">
                     <div className="flex flex-col gap-3">
-                        <h1 className="text-4xl font-bold">Mohamed Alnahhas</h1>
+                        <h1 className="text-2xl sm:text-4xl font-bold">Mohamed Alnahhas</h1>
                         <h2 className="text-xl">Web Developer</h2>
                         <p className="lg:max-w-[80%] text-muted-foreground mt-5">
                             As a Business Administration student with a keen interest in technology and software, I have
