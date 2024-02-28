@@ -19,7 +19,7 @@ export function TechItem({ label, imageSrc, imageAlt }: { label: string; imageSr
     return (
         <li className="inline-flex px-4 py-3 rounded-md items-center gap-2 bg-primary-foreground text-base">
             <div className="w-5 h-5 relative">
-                <Image src={imageSrc} alt={imageAlt} fill className="object-contain" priority />
+                <Image src={imageSrc} alt={imageAlt} draggable="false" fill className="object-contain" priority />
             </div>
             <div className="text-sm">{label}</div>
         </li>
@@ -76,7 +76,7 @@ export function Item({ item }: { item: ItemType }) {
                     </div>
                 </div>
                 <div className="bg-white/50 lg:max-h-[125px] max-w-[300px] aspect-video rounded-md relative">
-                    <Image src={`/images/${item.slug}.png`} alt={item.slug} fill className="object-cover rounded-sm" />
+                    <Image src={`/images/${item.slug}.png`} alt={item.slug} draggable="false" fill className="object-cover object-left-top rounded-sm" />
                 </div>
             </div>
         </article>
