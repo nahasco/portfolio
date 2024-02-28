@@ -48,6 +48,7 @@ export default async function Home() {
                         <Heading className="mt-0">Tech Skills</Heading>
                         <ul className="flex flex-wrap gap-2 mt-6 pb-20">
                             <TechItem label={"Javascript"} imageSrc="/icons/js-logo.svg" imageAlt="JS Logo" />
+                            <TechItem label={"Typescript"} imageSrc="/icons/ts-logo.svg" imageAlt="TS Logo" />
                             <TechItem label={"Python"} imageSrc="/icons/python-logo.svg" imageAlt="Python Logo" />
                             <TechItem label={"Next.js"} imageSrc="/icons/nextjs-logo.svg" imageAlt="Next.js Logo" />
                             <TechItem label={"React"} imageSrc="/icons/react-logo.svg" imageAlt="React Logo" />
