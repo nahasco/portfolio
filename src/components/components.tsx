@@ -28,7 +28,7 @@ export function TechItem({ label, imageSrc, imageAlt }: { label: string; imageSr
 
 export function Item({ item }: { item: ItemType }) {
     return (
-        <article className="relative inline-flex flex-col lg:grid lg:grid-cols-3 gap-5 transition-colors rounded hover:-m-4 hover:p-4 hover:bg-secondary ">
+        <article className="relative inline-flex flex-col lg:grid lg:grid-cols-3 gap-5 transition-colors rounded -m-4 p-4 hover:bg-secondary ">
             <div className="col-span-2 flex flex-col gap-3">
                 <h4 className="text-base">{item.title}</h4>
                 {item.link && <ExternalLink href={`https://${item.link}`}>{item.link}</ExternalLink>}
