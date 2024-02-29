@@ -26,88 +26,49 @@ export function TechItem({ label, imageSrc, imageAlt }: { label: string; imageSr
     )
 }
 
-function Item2({ item }) {
-    return (
-        <article className="relative rounded hover:-m-4 hover:p-4 hover:bg-secondary">
-            <div className="grid grid-cols-3 relative transition-colors">
-                <div className="col-span-2 flex flex-col gap-3">
-                    <h1 className="text-base">{item.title}</h1>
-                    <p className="text-muted-foreground text-sm">item description</p>
-                    <div className="inline-flex flex-wrap gap-2">
-                        {item.techs.map((tech: string) => {
-                            return (
-                                <div
-                                    key={tech}
-                                    className="border text-sm rounded-full px-2 py-1 text-muted-foreground bg-[#2563eb]/10 text-[#2563eb]"
-                                >
-                                    {tech}
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
-                <div className="bg-white/50 h-[100px] rounded-md relative flex-1">
-                    <Image src={`/images/${item.slug}.png`} alt={item.slug} fill className="object-cover rounded-sm" />
-                </div>
-            </div>
-        </article>
-    )
-}
-
 export function Item({ item }: { item: ItemType }) {
     return (
-        <article className="relative rounded hover:-m-4 hover:p-4 hover:bg-secondary">
-            <div className="inline-flex flex-col lg:grid lg:grid-cols-3 gap-5 relative transition-colors">
-                <div className="col-span-2 flex flex-col gap-3">
-                    <h1 className="text-base">{item.title}</h1>
-                    {item.link && <ExternalLink href={`https://${item.link}`}>{item.link}</ExternalLink>}
-                    {item.description && <p className="text-muted-foreground text-sm">{item.description}</p>}
-                    <div className="inline-flex flex-wrap gap-2">
-                        {item.techs.map((tech: string) => {
-                            return (
-                                <div
-                                    key={tech}
-                                    className="border text-sm rounded-full px-2 py-1 text-muted-foreground bg-[#2563eb]/10"
-                                >
-                                    {tech}
-                                </div>
-                            )
-                        })}
-                    </div>
+        <article className="relative inline-flex flex-col lg:grid lg:grid-cols-3 gap-5 transition-colors rounded hover:-m-4 hover:p-4 hover:bg-secondary ">
+            <div className="col-span-2 flex flex-col gap-3">
+                <h4 className="text-base">{item.title}</h4>
+                {item.link && <ExternalLink href={`https://${item.link}`}>{item.link}</ExternalLink>}
+                {item.description && <p className="text-muted-foreground text-sm">{item.description}</p>}
+                <div className="inline-flex flex-wrap gap-2">
+                    {item.techs.map((tech: string) => {
+                        return (
+                            <div
+                                key={tech}
+                                className="border text-sm rounded-full px-2 py-1 text-muted-foreground bg-[#2563eb]/10"
+                            >
+                                {tech}
+                            </div>
+                        )
+                    })}
                 </div>
-                <div className="bg-muted lg:max-h-[125px] max-w-[300px] aspect-video rounded-md relative">
-                    <Image
-                        src={`/images/${item.slug}.png`}
-                        alt={item.slug}
-                        draggable="false"
-                        fill
-                        className="object-cover object-left-top rounded-sm"
-                    />
-                </div>
+            </div>
+            <div className="bg-muted max-w-[300px] aspect-video rounded-sm relative border">
+                <Image
+                    src={`/images/${item.slug}.png`}
+                    alt={item.slug}
+                    draggable="false"
+                    fill
+                    className="object-cover object-left-top rounded-sm"
+                />
             </div>
         </article>
     )
 }
 
-export function ExternalLink({
-    href,
-    children,
-    className,
-    ...props
-}: {
-    href: string
-    children: string
-    className?: string
-}) {
+export function ExternalLink({ href, children, ...props }: { href: string; children: string }) {
     return (
         <a
             href={href}
-            className={`text-primary flex items-center gap-1 ${className && className}`}
+            className={"group text-primary flex items-center gap-1 relative hover:underline"}
             target="_blank"
             {...props}
         >
             {children}
-            <ArrowUpRightIcon className="w-4 h-4" />
+            <ArrowUpRightIcon className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
         </a>
     )
 }

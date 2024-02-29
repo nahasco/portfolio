@@ -14,8 +14,8 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Analytics/>
-                <ThemeProvider attribute="class" forcedTheme="dark" enableSystem disableTransitionOnChange>
+                <Analytics />
+                <ThemeProvider attribute="class" defaultTheme="system" forcedTheme="dark" enableSystem disableTransitionOnChange>
                     {children}
                 </ThemeProvider>
             </body>
