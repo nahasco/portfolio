@@ -47,7 +47,13 @@ export const works: ItemType[] = [
 
 export const educations = [
     {
-        years: "2021-2025",
+        years: "2024-Present",
+        university: "Saarland University",
+        degree: "Bachelor of Arts - Business Administration",
+        location: "Saarland, Germany"
+    },
+    {
+        years: "2021-2024",
         university: "Yildiz Technical University",
         degree: "Bachelor of Arts - Business Administration",
         location: "Istanbul, Turkey"
