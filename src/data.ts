@@ -27,6 +27,12 @@ export const works: ItemType[] = [
         link: "layeredcreatives.nl",
     },
     {
+        slug: "albayanknowledge",
+        title: "Company Website Design & Development - Albayan Knowledge",
+        techs: ["WordPress", "Elementor"],
+        link: "albayanknowledge.com",
+    },
+    {
         slug: "rebelladigital",
         title: "Agency Website Design & Development - Rebella Digital",
         techs: ["WordPress", "Elementor"],
@@ -40,7 +46,7 @@ export const works: ItemType[] = [
     },
     {
         slug: "eleven46",
-        title: "Small Online Design & Development - Eleven46",
+        title: "Small Online Store Design & Development - Eleven46",
         techs: ["WordPress", "Woocommerce", "Elementor"],
     },
 ]
