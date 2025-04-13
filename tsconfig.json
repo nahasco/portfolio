@@ -1,8 +1,12 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components": ["./src/components"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@/components": [
+        "./src/components"
+      ]
     },
     "lib": [
       "dom",
@@ -24,7 +28,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",

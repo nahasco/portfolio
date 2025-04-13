@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button"
-import { ArrowDownToLineIcon, ArrowUpRightIcon, ExternalLinkIcon } from "lucide-react"
+import { ArrowDownToLineIcon, ArrowUpRightIcon, Download, ExternalLinkIcon } from "lucide-react"
 import Image from "next/image"
 import { ItemType, projects, works } from "@/data"
 import { ExternalLink, Heading, Item, TechItem } from "@/components/components"
 import { GithubLogo, LinkedinLogo } from "@/components/social-icons"
+import DownloadComponent from "@/components/download-component"
 
 export default async function Home() {
     return (
@@ -21,12 +22,7 @@ export default async function Home() {
                         </p>
                     </div>
                     <div className="flex flex-col gap-6">
-                        <a href="/cv.pdf" download="CV-Mohamed-Alnahhas">
-                            <Button className="rounded-full self-start">
-                                <ArrowDownToLineIcon className="me-2 w-4 h-4" />
-                                Resume(CV)
-                            </Button>
-                        </a>
+                        <DownloadComponent />
                         <div className="flex gap-3">
                             <a href="https://github.com/nahasco" target="_blank">
                                 <GithubLogo className="fill-foreground" />
@@ -103,20 +99,11 @@ export default async function Home() {
                         <Heading>Formal Education</Heading>
                         <ul className="flex flex-col gap-8 mt-6 pb-20">
                             <li className="grid grid-cols-8 gap-4 text-muted-foreground">
-                                <div className="col-span-2 text-muted-foreground">2024-Present</div>
+                                <div className="col-span-2 text-muted-foreground">2025-Present</div>
                                 <div className="col-span-6">
-                                    <h4 className="text-lg text-foreground">Saarland University</h4>
-                                    <p>Bachelor - Business Administration</p>
-                                    <p>Saarland, Germany</p>
-                                </div>
-                            </li>
-
-                            <li className="grid grid-cols-8 gap-4 text-muted-foreground">
-                                <div className="col-span-2 text-muted-foreground">2021-2025</div>
-                                <div className="col-span-6">
-                                    <h4 className="text-lg text-foreground">Yildiz Technical University</h4>
-                                    <p>Bachelor of Arts - Business Administration</p>
-                                    <p>Istanbul, Turkey</p>
+                                    <h4 className="text-lg text-foreground">Ruhr-Universität Bochum (RUB)</h4>
+                                    <p>Studienspur - Learning german language</p>
+                                    <p>Bochum, Germany</p>
                                 </div>
                             </li>
 
@@ -124,8 +111,17 @@ export default async function Home() {
                                 <div className="col-span-2 text-muted-foreground">2023</div>
                                 <div className="col-span-6">
                                     <h4 className="text-lg text-foreground">Technical University Dortmund</h4>
-                                    <p>Erasmus+ - Business Administration</p>
+                                    <p>Erasmus+ Semester</p>
                                     <p>Dortmund, Germany</p>
+                                </div>
+                            </li>
+
+                            <li className="grid grid-cols-8 gap-4 text-muted-foreground">
+                                <div className="col-span-2 text-muted-foreground">2021-Present</div>
+                                <div className="col-span-6">
+                                    <h4 className="text-lg text-foreground">Yildiz Technical University</h4>
+                                    <p>Bachelor of Arts - Business Administration</p>
+                                    <p>Istanbul, Turkey</p>
                                 </div>
                             </li>
                         </ul>

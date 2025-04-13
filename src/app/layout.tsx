@@ -12,10 +12,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body className={inter.className}>
                 <Analytics />
-                <ThemeProvider attribute="class" defaultTheme="system" forcedTheme="dark" enableSystem disableTransitionOnChange>
+                <ThemeProvider attribute="class" defaultTheme="dark">
                     {children}
                 </ThemeProvider>
             </body>
