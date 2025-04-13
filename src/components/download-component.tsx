@@ -44,7 +44,7 @@ function DownloadComponent() {
                 onClick={() => setOpen(true)}
                 style={{ borderRadius: 20 }}
             >
-                <motion.div layoutId="icon">
+                <motion.div>
                     <ArrowDownToLineIcon className="me-2 w-4 h-4" />
                 </motion.div>
                 <motion.span layoutId="label">Resume(CV)</motion.span>
