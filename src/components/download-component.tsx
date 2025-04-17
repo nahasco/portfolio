@@ -3,10 +3,9 @@
 import React, { useEffect, useRef, useState } from "react"
 import { ArrowDownToLineIcon } from "lucide-react"
 import { useOnClickOutside } from "usehooks-ts"
-import { AnimatePresence, motion } from "motion/react"
+import { AnimatePresence, motion, MotionConfig } from "motion/react"
 
 function DownloadComponent() {
-    const [state, setState] = useState()
     const [open, setOpen] = useState(false)
     const ref = useRef(null)
     useOnClickOutside(ref, () => setOpen(false))
@@ -20,7 +19,7 @@ function DownloadComponent() {
 
         window.addEventListener("keydown", handleKeyDown)
         return () => window.removeEventListener("keydown", handleKeyDown)
-    }, [open, state])
+    }, [open])
 
     function handleDownload(lang: "en" | "de") {
         const url = lang === "en" ? "/cv-en.pdf" : "/cv-de.pdf"
@@ -37,61 +36,62 @@ function DownloadComponent() {
     }
 
     return (
-        <AnimatePresence mode="popLayout">
-            <div className="relative flex align-start justify-start text-start">
-                {open ? (
-                    <motion.div
-                        layoutId="popover"
-                        ref={ref}
-                        className="absolute bottom-0 flex flex-col gap-2 bg-primary p-4 w-full md:w-[200px]"
-                        style={{ borderRadius: 15 }}
-                    >
-                        <div className="flex items-center text-primary-foreground">
-                            <motion.span layoutId="label">Resume(CV)</motion.span>
-                        </div>
+        <MotionConfig transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}>
+            <motion.button
+                layoutId="popover"
+                className="relative w-fit flex items-center bg-primary p-3 text-primary-foreground"
+                onClick={() => setOpen(true)}
+                style={{ borderRadius: 15 }}
+            >
+                <motion.div
+                    initial={{ opacity: 0, scaleX: 0 }}
+                    animate={{ opacity: 1, scaleX: 1 }}
+                    exit={{ opacity: 0, scaleX: 0 }}
+                    layoutId="icon"
+                >
+                    <ArrowDownToLineIcon className="me-2 w-4 h-4" />
+                </motion.div>
+                <motion.span layoutId="label">Resume(CV)</motion.span>
+            </motion.button>
+            <AnimatePresence>
+                <div className="relative flex align-start justify-start text-start">
+                    {open ? (
+                        <motion.div
+                            layoutId="popover"
+                            ref={ref}
+                            className="absolute bottom-0 flex flex-col gap-2 bg-primary p-4 w-full md:w-[200px]"
+                            style={{ borderRadius: 15 }}
+                        >
+                            <div className="flex items-center text-primary-foreground">
+                                <motion.span layoutId="label">Resume(CV)</motion.span>
+                            </div>
 
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 1 }}
-                            className="flex flex-col gap-1"
-                        >
-                            <motion.button
-                                onClick={() => handleDownload("en")}
-                                className="flex border border-white/5 items-center text-start py-3 px-4 md:py-1 md:px-3 text-primary-foreground bg-white/10 hover:bg-white/20 transition-colors rounded-lg"
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 1 }}
+                                className="flex flex-col gap-2"
                             >
-                                English
-                                <ArrowDownToLineIcon className="ms-auto w-4 h-4" />
-                            </motion.button>
-                            <motion.button
-                                onClick={() => handleDownload("de")}
-                                className="flex border border-white/5 items-center text-start py-3 px-4 md:py-1 md:px-3 text-primary-foreground bg-white/10 hover:bg-white/20 transition-colors rounded-lg"
-                            >
-                                Deutsch
-                                <ArrowDownToLineIcon className="ms-auto w-4 h-4" />
-                            </motion.button>
+                                <motion.button
+                                    onClick={() => handleDownload("en")}
+                                    className="flex border border-white/5 items-center text-start py-3 px-4 md:py-1 md:px-3 text-primary-foreground bg-white/10 hover:bg-white/20 transition-colors rounded-lg"
+                                >
+                                    English
+                                    <ArrowDownToLineIcon className="ms-auto w-4 h-4" />
+                                </motion.button>
+                                <motion.button
+                                    onClick={() => handleDownload("de")}
+                                    className="flex border border-white/5 items-center text-start py-3 px-4 md:py-1 md:px-3 text-primary-foreground bg-white/10 hover:bg-white/20 transition-colors rounded-lg"
+                                >
+                                    Deutsch
+                                    <ArrowDownToLineIcon className="ms-auto w-4 h-4" />
+                                </motion.button>
+                            </motion.div>
                         </motion.div>
-                    </motion.div>
-                ) : (
-                    <motion.button
-                        layoutId="popover"
-                        className="relative flex items-center bg-primary p-3 text-primary-foreground"
-                        onClick={() => setOpen(true)}
-                        style={{ borderRadius: 20 }}
-                    >
-                        <motion.div
-                            initial={{ opacity: 0, scaleX: 0 }}
-                            animate={{ opacity: 1, scaleX: 1 }}
-                            exit={{ opacity: 0, scaleX: 0 }}
-                            layoutId="icon"
-                        >
-                            <ArrowDownToLineIcon className="me-2 w-4 h-4" />
-                        </motion.div>
-                        <motion.span layoutId="label">Resume(CV)</motion.span>
-                    </motion.button>
-                )}
-            </div>
-        </AnimatePresence>
+                    ) : null}
+                </div>
+            </AnimatePresence>
+        </MotionConfig>
     )
 }
 
