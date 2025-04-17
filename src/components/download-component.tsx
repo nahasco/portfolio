@@ -43,12 +43,7 @@ function DownloadComponent() {
                 onClick={() => setOpen(true)}
                 style={{ borderRadius: 15 }}
             >
-                <motion.div
-                    initial={{ opacity: 0, scaleX: 0 }}
-                    animate={{ opacity: 1, scaleX: 1 }}
-                    exit={{ opacity: 0, scaleX: 0 }}
-                    layoutId="icon"
-                >
+                <motion.div layoutId="icon">
                     <ArrowDownToLineIcon className="me-2 w-4 h-4" />
                 </motion.div>
                 <motion.span layoutId="label">Resume(CV)</motion.span>
@@ -63,6 +58,9 @@ function DownloadComponent() {
                             style={{ borderRadius: 15 }}
                         >
                             <div className="flex items-center text-primary-foreground">
+                                <motion.div layoutId="icon" style={{ opacity: 0, width: 0 }}>
+                                    <ArrowDownToLineIcon className="me-2 w-4 h-4" />
+                                </motion.div>
                                 <motion.span layoutId="label">Resume(CV)</motion.span>
                             </div>
 
