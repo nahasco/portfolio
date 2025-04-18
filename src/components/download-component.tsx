@@ -22,8 +22,8 @@ function DownloadComponent() {
     }, [open])
 
     function handleDownload(lang: "en" | "de") {
-        const url = lang === "en" ? "/cv-en.pdf" : "/cv-de.pdf"
-        const title = lang === "en" ? "CV-Mohamed-Alnahhas" : "Lebenslauf-Mohamed-Alnahhas"
+        const url = lang === "en" ? "/Resume_Mohamed_Alnahhas.pdf" : "/Lebenslauf_Mohamed_Alnahhas.pdf"
+        const title = lang === "en" ? "Resume-Mohamed-Alnahhas" : "Lebenslauf-Mohamed-Alnahhas"
 
         const link = document.createElement("a")
         link.href = url
