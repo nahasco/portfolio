@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         <html lang="en" suppressHydrationWarning>
             <body className={inter.className}>
                 <Analytics />
-                <ThemeProvider attribute="class" defaultTheme="dark">
+                <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light">
                     {children}
                 </ThemeProvider>
             </body>

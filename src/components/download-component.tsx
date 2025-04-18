@@ -36,7 +36,7 @@ function DownloadComponent() {
     }
 
     return (
-        <MotionConfig transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}>
+        <MotionConfig transition={{ type: "spring", bounce: 0.27, duration: 0.5 }}>
             <motion.button
                 layoutId="popover"
                 className="relative w-fit flex items-center bg-primary p-3 text-primary-foreground"
