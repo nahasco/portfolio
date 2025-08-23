@@ -24,7 +24,6 @@ export const works: ItemType[] = [
         slug: "layered-creatives",
         title: "Online Store Design & Development - Layered Creatives",
         techs: ["WordPress", "Woocommerce", "Elementor"],
-        link: "layeredcreatives.nl",
     },
     {
         slug: "albayanknowledge",
@@ -36,13 +35,11 @@ export const works: ItemType[] = [
         slug: "rebelladigital",
         title: "Agency Website Design & Development - Rebella Digital",
         techs: ["WordPress", "Elementor"],
-        link: "rebelladigital.be",
     },
     {
         slug: "weddingniceties",
         title: "Company Website and Online Store Design & Development - Wedding Niceties",
         techs: ["WordPress", "Woocommerce", "Elementor"],
-        link: "weddingniceties.com",
     },
     {
         slug: "eleven46",

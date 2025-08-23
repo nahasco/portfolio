@@ -1,7 +1,4 @@
-import { Button } from "@/components/ui/button"
-import { ArrowDownToLineIcon, ArrowUpRightIcon, Download, ExternalLinkIcon } from "lucide-react"
-import Image from "next/image"
-import { ItemType, projects, works } from "@/data"
+import { projects, works } from "@/data"
 import { ExternalLink, Heading, Item, TechItem } from "@/components/components"
 import { GithubLogo, LinkedinLogo } from "@/components/social-icons"
 import DownloadComponent from "@/components/download-component"
@@ -23,11 +20,11 @@ export default async function Home() {
                     </div>
                     <div className="flex flex-col gap-6">
                         <DownloadComponent />
-                        <div className="flex gap-3">
-                            <a href="https://github.com/nahasco" target="_blank">
+                        <div className="flex gap-2">
+                            <a className="size-10 grid place-items-center bg-secondary hover:opacity-75 transition-all rounded-lg" href="https://github.com/nahasco" target="_blank">
                                 <GithubLogo className="fill-foreground" />
                             </a>
-                            <a href="https://www.linkedin.com/in/mohamed-alnahhas/" target="_blank">
+                            <a className="size-10 grid place-items-center bg-secondary hover:opacity-75 transition-all rounded-lg" href="https://www.linkedin.com/in/mohamed-alnahhas/" target="_blank">
                                 <LinkedinLogo className="fill-foreground" />
                             </a>
                         </div>
