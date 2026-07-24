@@ -1,7 +1,7 @@
-import { projects, works } from "@/data"
-import { ExternalLink, Heading, Item, TechItem } from "@/components/components"
-import { GithubLogo, LinkedinLogo } from "@/components/social-icons"
-import DownloadComponent from "@/components/download-component"
+import { projects, works } from "@/data";
+import { ExternalLink, Heading, Item, TechItem } from "@/components/components";
+import { GithubLogo, LinkedinLogo } from "@/components/social-icons";
+import DownloadComponent from "@/components/download-component";
 
 export default async function Home() {
     return (
@@ -12,19 +12,31 @@ export default async function Home() {
                         <h1 className="text-3xl sm:text-4xl font-bold">Mohamed Alnahhas</h1>
                         <h2 className="text-xl">Web Developer</h2>
                         <p className="lg:max-w-[80%] text-muted-foreground mt-5">
-                            As a Business Administration student with a keen interest in technology and software, I have
-                            been drawn to the field of web development. I am equally passionate about both areas and
-                            have pursued my interest in web development by completing two Harvard courses and working on
-                            various personal projects.
+                            My interest in technology began not in a classroom, but in front of a screen, teaching
+                            myself to code long before I ever set foot in a lecture hall. What started with two
+                            introductory programming courses from Harvard grew into something far more serious: building
+                            my own full-stack applications from the ground up — designing databases, writing backend
+                            logic, and deploying them to run reliably in production. That hands-on process, of turning
+                            an idea into something that actually works, is what convinced me to pursue Business
+                            Informatics formally, and I am now studying Wirtschaftsinformatik at Hochschule Karlsruhe
+                            (HKA).
                         </p>
                     </div>
                     <div className="flex flex-col gap-6">
                         <DownloadComponent />
                         <div className="flex gap-2">
-                            <a className="size-10 grid place-items-center bg-secondary hover:opacity-75 transition-all rounded-lg" href="https://github.com/nahasco" target="_blank">
+                            <a
+                                className="size-10 grid place-items-center bg-secondary hover:opacity-75 transition-all rounded-lg"
+                                href="https://github.com/nahasco"
+                                target="_blank"
+                            >
                                 <GithubLogo className="fill-foreground" />
                             </a>
-                            <a className="size-10 grid place-items-center bg-secondary hover:opacity-75 transition-all rounded-lg" href="https://www.linkedin.com/in/mohamed-alnahhas/" target="_blank">
+                            <a
+                                className="size-10 grid place-items-center bg-secondary hover:opacity-75 transition-all rounded-lg"
+                                href="https://www.linkedin.com/in/mohamed-alnahhas/"
+                                target="_blank"
+                            >
                                 <LinkedinLogo className="fill-foreground" />
                             </a>
                         </div>
@@ -78,7 +90,7 @@ export default async function Home() {
                         <Heading>Projects</Heading>
                         <div className="flex flex-col gap-12 mt-6 pb-20">
                             {projects.map((project) => {
-                                return <Item key={project.slug} item={project} />
+                                return <Item key={project.slug} item={project} />;
                             })}
                         </div>
                     </section>
@@ -87,7 +99,7 @@ export default async function Home() {
                         <Heading>Client Work</Heading>
                         <div className="flex flex-col gap-12 mt-6 pb-20">
                             {works.map((work) => {
-                                return <Item key={work.slug} item={work} />
+                                return <Item key={work.slug} item={work} />;
                             })}
                         </div>
                     </section>
@@ -96,10 +108,20 @@ export default async function Home() {
                         <Heading>Formal Education</Heading>
                         <ul className="flex flex-col gap-8 mt-6 pb-20">
                             <li className="grid grid-cols-8 gap-4 text-muted-foreground">
-                                <div className="col-span-2 text-muted-foreground">2025-Present</div>
+                                <div className="col-span-2 text-muted-foreground">2026-Present</div>
+                                <div className="col-span-6">
+                                    <h4 className="text-lg text-foreground">
+                                        Karlsruhe University of Applied Sciences (HKA)
+                                    </h4>
+                                    <p>Bachelor of Science in Management Information Systems (MIS)</p>
+                                    <p>Karlsruhe, Germany</p>
+                                </div>
+                            </li>
+                            <li className="grid grid-cols-8 gap-4 text-muted-foreground">
+                                <div className="col-span-2 text-muted-foreground">2025-2026</div>
                                 <div className="col-span-6">
                                     <h4 className="text-lg text-foreground">Ruhr-Universität Bochum (RUB)</h4>
-                                    <p>Studienspur - Learning german language</p>
+                                    <p>Studienspur - Learning the German language</p>
                                     <p>Bochum, Germany</p>
                                 </div>
                             </li>
@@ -117,7 +139,7 @@ export default async function Home() {
                                 <div className="col-span-2 text-muted-foreground">2021-Present</div>
                                 <div className="col-span-6">
                                     <h4 className="text-lg text-foreground">Yildiz Technical University</h4>
-                                    <p>Bachelor of Arts - Business Administration</p>
+                                    <p>Bachelor of Arts in Business Administration</p>
                                     <p>Istanbul, Turkey</p>
                                 </div>
                             </li>
@@ -145,5 +167,5 @@ export default async function Home() {
                 </div>
             </main>
         </>
-    )
+    );
 }
